@@ -131,25 +131,47 @@ def move():
     dot(20, "yellow")
 
     for point, course in ghosts:
-        if valid(point + course):
-            point.move(course)
-        else:
-            options = [
-                vector(10, 0),
-                vector(-10, 0),
-                vector(0, 10),
-                vector(0, -20),
-            ]
-            plan = choice(options)
-            course.x = plan.x
-            course.y = plan.y
 
+        options = [
+            vector(10, 0),
+            vector(-10, 0),
+            vector(0, 10),
+            vector(0, -20),
+        ]
+
+        # movimientos válidos
+        valid_moves = []
+
+        for option in options:
+            if valid(point + option):
+                valid_moves.append(option)
+
+        # elegir movimiento más cercano a pacman
+        best = None
+        min_dist = float('inf')
+
+        for move_option in valid_moves:
+            new_pos = point + move_option
+            dist = abs(pacman - new_pos)
+
+            if dist < min_dist:
+                min_dist = dist
+                best = move_option
+
+        # aplicar movimiento
+        if best:
+            course.x = best.x
+            course.y = best.y
+            point.move(course)
+
+        # dibujar fantasma
         up()
         goto(point.x + 10, point.y + 10)
         dot(20, "red")
 
     update()
 
+    # detectar colisión
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
