@@ -3,3 +3,4 @@
 - Changes made:
   - Change the board
   - Make the ghosts go faster
+  - Make ghosts smarter, with intelligence decision making :V
