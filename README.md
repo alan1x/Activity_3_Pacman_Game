@@ -1,9 +1,47 @@
-# Actividad 3 PACMAN GAME
+# Pacman Game Project
 
-Pacman game implemented in python
-[Original code](http://www.grantjenks.com/docs/freegames/pacman.html)
+Modified version of the classic Pacman game using Python Turtle and FreeGames.
 
-- New Features:
-  - Change the board
-  - Make the ghosts go faster
-  - Make ghosts smarter, with intelligence decision making :V
+## Features Added
+- Smarter ghosts
+- Faster ghosts
+- Modified game board
+
+## Technologies
+- Python 3
+- Turtle Graphics
+- FreeGames
+- Git & GitHub
+
+## Installation
+
+Install FreeGames:
+
+```bash
+pip install freegames
+```
+
+Or:
+
+```bash
+pip3 install freegames
+```
+
+## Run the Game
+
+```bash
+python3 pacman.py
+```
+
+## Controls
+
+| Key | Action |
+|------|--------|
+| ↑ | Move Up |
+| ↓ | Move Down |
+| ← | Move Left |
+| → | Move Right |
+
+## Developers
+- Alan
+- Uriel
